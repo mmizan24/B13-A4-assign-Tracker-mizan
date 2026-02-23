@@ -8,17 +8,17 @@
 
     <!-- tailwind connetion -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
 
 
-<!-- daisyUI connection  -->
-<link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
-<script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-<!-- fon-awesome  -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- daisyUI connection  -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- fon-awesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 </head>
 
@@ -74,14 +74,29 @@
 
     </section>
 
-    <section id="pri-btn" class=" py-5 w-300 mx-auto gap-2 ">
+    <section id="pri-btn" class=" py-5 w-300 mx-auto  ">
 
-        <div>
-            <button class="btn btn-soft btn-primary w-20 ">All</button>
-            <button class="btn btn-soft btn-primary w-20">Interveiw</button>
-            <button class="btn btn-soft btn-primary w-20">Rejected </button>
+        <section id="pri-btn" class="py-5 ">
+            <div id="button-container" class=" flex gap-x-10 ">
+                <button id="btn-all"
+                    class="tab-btn active-style  shadow-sm px-6 py-2 rounded-md transition-all bg-blue-600 text-white w-80 ">
+                    All
+                </button>
+                <button id="btn-interview" class="tab-btn px-6 py-2 rounded-md transition-all text-gray-600 w-80 shadow-sm ">
+                    Interview
+                </button>
+                <button id="btn-rejected" class="tab-btn px-6 py-2 rounded-md transition-all text-gray-600  shadow-sm w-90">
+                    Rejected
+                </button>
+            </div>
+        </section>
 
-        </div>
+        <!-- <div id="button-container">
+            <button id="btn-all" class="tab-btn btn btn-soft btn-primary btn-active w-20 ">All</button>
+            <button id="btn-interveiw" class="tab-btn btn btn-soft btn-primary w-20">Interveiw</button>
+            <button id="btn-rejected" class="tab-btn btn btn-soft btn-primary w-20">Rejected </button>
+
+        </div> -->
     </section>
 
 
@@ -116,7 +131,7 @@
                     users worldwide.
                 </p>
                 <div class="flex gap-3">
-                    <button
+                    <button id="btn-inter-one"
                         class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors">INTERVIEW</button>
                     <button
                         class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors">REJECTED</button>
@@ -404,8 +419,8 @@
 
         <br>
         <br>
-       
-    
+
+
 
     </section>
 
@@ -426,8 +441,8 @@
 
 
 
-
-    <script src="./scripts.js/biplob.js"></script>
+    <script src="./scripts.js/machine.js"></script>
+    <script src="./scripts.js/interveiw.js"></script>
 </body>
 
 </html>
