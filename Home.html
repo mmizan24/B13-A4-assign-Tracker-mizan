@@ -9,16 +9,12 @@
     <!-- tailwind connetion -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-
-
     <!-- daisyUI connection  -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- fon-awesome  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
 
 </head>
 
@@ -31,7 +27,7 @@
         <div class="flex flex-col sm:flex-row gap-4 mt-5">
             <div class="card w-100 bg-base-100 card-xs shadow-sm">
                 <div class="card-body">
-                    <h2 class="font-bold">Total</h2>
+                    <h2 class="font-bold">Total Applications</h2>
                     <p id="total-num" class="font-bold text-xl">0</p>
                 </div>
             </div>
@@ -56,80 +52,58 @@
     <main class="mainContainer">
 
         <section>
-
-            <div class=" flex justify-between pt-5">
+            <div class="flex justify-between pt-5">
                 <div>
-                    <h2>Available Jobs </h2>
+                    <h2 class="font-semibold text-lg">Available Jobs</h2>
                 </div>
                 <div>
-                    <p>8 <span>jobs</span></p>
+                    <p id="available-jobs-count">8 <span>jobs</span></p>
                 </div>
             </div>
-
         </section>
 
-        <section id="pri-btn" class=" py-5 w-300 mx-auto  ">
-
-            <section class="py-5 ">
-                <div id="button-container" class=" flex gap-x-10  ">
+        <section id="pri-btn" class="py-5 w-full mx-auto">
+            <section class="py-5">
+                <div id="button-container" class="flex gap-x-4 md:gap-x-10 flex-wrap">
                     <button onclick="toggleStyle('btn-all')" id="btn-all"
-                        class="tab-btn active-style  shadow-sm px-6 py-2 rounded-md  bg-blue-600 text-white w-80 btn-active ">
+                        class="tab-btn px-6 py-2 rounded-md bg-blue-600 text-white w-auto min-w-[120px] shadow-sm transition-all">
                         All
                     </button>
                     <button onclick="toggleStyle('btn-interview')" id="btn-interview"
-                        class="tab-btn px-6 py-2 rounded-md transition-all bg-gray-200 text-black w-80 shadow-sm  ">
+                        class="tab-btn px-6 py-2 rounded-md bg-gray-200 text-black w-auto min-w-[120px] shadow-sm transition-all">
                         Interview
                     </button>
                     <button onclick="toggleStyle('btn-rejected')" id="btn-rejected"
-                        class="tab-btn px-6 py-2 rounded-md transition-all bg-gray-200 text-black shadow-sm w-90">
+                        class="tab-btn px-6 py-2 rounded-md bg-gray-200 text-black w-auto min-w-[120px] shadow-sm transition-all">
                         Rejected
                     </button>
                 </div>
             </section>
-
-            <!-- <div id="button-container">
-            <button id="btn-all" class="tab-btn btn btn-soft btn-primary btn-active w-20 ">All</button>
-            <button id="btn-interveiw" class="tab-btn btn btn-soft btn-primary w-20">Interveiw</button>
-            <button id="btn-rejected" class="tab-btn btn btn-soft btn-primary w-20">Rejected </button>
-
-        </div> -->
         </section>
 
-        <!-- filtered carards -->
-
-        <section id="filtered-section" class='hidden'>
-
+        <!-- filtered cards section -->
+        <section id="filtered-section" class="hidden">
+            <!-- Filtered jobs will be rendered here dynamically -->
         </section>
 
-
-        <section id="alljobs" class=" grid row-auto gap-5 firstJob">
-
-            <section id="first-job">
-                <div class="space-y-4 ">
+        <section id="alljobs" class="grid grid-cols-1 gap-5">
+            <!-- Job 1 -->
+            <section id="first-job" class="job-card">
+                <div class="space-y-4">
                     <div
-                        class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md ">
-                        <div class="flex justify-between ">
+                        class="w-full bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md">
+                        <div class="flex justify-between">
                             <div>
-                                <h2 id="C-name" class="  text-xl font-bold text-slate-900 dark:text-white company">
-                                    Mobile
-                                    First Corp</h2>
-                                <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">React Native
-                                    Developer
-                                </p>
-                                <div
-                                    class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
-                                    <span class="flex items-center gap-1"><span
-                                            class="material-icons-outlined text-sm  place">Remote</span></span>
-                                    <span class="flex items-center gap-1"><span
-                                            class="material-icons-outlined text-sm  fulltime">. Full-time</span> </span>
-                                    <span class="flex items-center gap-1"><span
-                                            class="material-icons-outlined text-sm salary">. $130,000 -
-                                            $175,000</span></span>
+                                <h2 class="text-xl font-bold text-slate-900 dark:text-white company">Mobile First Corp</h2>
+                                <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">React Native Developer</p>
+                                <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
+                                    <span class="flex items-center gap-1 job-pattern">Remote</span>
+                                    <span class="flex items-center gap-1 job-time">Full-time</span>
+                                    <span class="flex items-center gap-1 salary-range">$130,000 - $175,000</span>
                                 </div>
                             </div>
                             <div class="flex gap-3 items-center">
-                                <button
-                                    class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
+                                <button class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
                                     <span class="flex items-center gap-1">
                                         <span class="material-icons-outlined text-sm">delete</span>
                                         DELETE
@@ -137,50 +111,36 @@
                                 </button>
                             </div>
                         </div>
-                        <div
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 notApplied">
-                            <span class="notApplied">NOT APPLIED</span>
+                        <div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 status-badge">
+                            <span class="status-text">NOT APPLIED</span>
                         </div>
                         <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 notes">
-                            Build cross-platform mobile applications using React Native. Work on products used by
-                            millions
-                            of
-                            users worldwide.
+                            Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
                         </p>
                         <div class="flex gap-3">
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
                         </div>
                     </div>
+                </div>
             </section>
 
-            <section id="second-job">
-
+            <!-- Job 2 -->
+            <section id="second-job" class="job-card">
                 <div
                     class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md">
-                    <div class="flex justify-between items-start ">
+                    <div class="flex justify-between items-start">
                         <div>
-                            <h2 id="C-name" class="text-xl font-bold text-slate-900 dark:text-white company">WebFlow
-                                Agency</h2>
-                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">Web Designer &amp;
-                                Developer
-                            </p>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white company">WebFlow Agency</h2>
+                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">Web Designer & Developer</p>
                             <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm place"></span>
-                                    Los Angeles, CA</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm fulltime">Part-time</span> </span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm salary">$80,000 -
-                                        $120,000</span> </span>
+                                <span class="flex items-center gap-1 job-pattern">Los Angeles, CA</span>
+                                <span class="flex items-center gap-1 job-time">Part-time</span>
+                                <span class="flex items-center gap-1 salary-range">$80,000 - $120,000</span>
                             </div>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
                                 <span class="flex items-center gap-1">
                                     <span class="material-icons-outlined text-sm">delete</span>
                                     DELETE
@@ -188,49 +148,35 @@
                             </button>
                         </div>
                     </div>
-                    <div
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 ">
-                        <span class="notApplied">NOT APPLIED</span>
+                    <div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 status-badge">
+                        <span class="status-text">NOT APPLIED</span>
                     </div>
                     <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 notes">
-                        Create stunning web experiences for high-profile clients. Must have portfolio and experience
-                        with
-                        modern
-                        web design trends.
+                        Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.
                     </p>
                     <div class="flex gap-3">
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors btnInterveiw">INTERVIEW</button>
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors btnRejected">REJECTED</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
                     </div>
                 </div>
-
             </section>
 
-            <section id="third-job">
-
+            <!-- Job 3 -->
+            <section id="third-job" class="job-card">
                 <div
                     class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900 dark:text-white">DataViz Solutions</h2>
-                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2">Data Visualization Specialist
-                            </p>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white company">DataViz Solutions</h2>
+                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">Data Visualization Specialist</p>
                             <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">place</span>
-                                    Boston, MA</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">work_outline</span> Full-time</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">payments</span> $125,000 -
-                                    $165,000</span>
+                                <span class="flex items-center gap-1 job-pattern">Boston, MA</span>
+                                <span class="flex items-center gap-1 job-time">Full-time</span>
+                                <span class="flex items-center gap-1 salary-range">$125,000 - $165,000</span>
                             </div>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
                                 <span class="flex items-center gap-1">
                                     <span class="material-icons-outlined text-sm">delete</span>
                                     DELETE
@@ -238,44 +184,35 @@
                             </button>
                         </div>
                     </div>
-                    <div
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4">
-                        NOT APPLIED
+                    <div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 status-badge">
+                        <span class="status-text">NOT APPLIED</span>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong
-                        analytical thinking.
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 notes">
+                        Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.
                     </p>
                     <div class="flex gap-3">
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors btnInterveiw">INTERVIEW</button>
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors">REJECTED</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
                     </div>
                 </div>
             </section>
 
-            <section id="forth-job">
+            <!-- Job 4 -->
+            <section id="forth-job" class="job-card">
                 <div
                     class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900 dark:text-white">CloudFirst Inc</h2>
-                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2">Backend Developer</p>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white company">CloudFirst Inc</h2>
+                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">Backend Developer</p>
                             <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">place</span>
-                                    Seattle, WA</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">work_outline</span> Full-time</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">payments</span> $140,000 -
-                                    $190,000</span>
+                                <span class="flex items-center gap-1 job-pattern">Seattle, WA</span>
+                                <span class="flex items-center gap-1 job-time">Full-time</span>
+                                <span class="flex items-center gap-1 salary-range">$140,000 - $190,000</span>
                             </div>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
                                 <span class="flex items-center gap-1">
                                     <span class="material-icons-outlined text-sm">delete</span>
                                     DELETE
@@ -283,48 +220,35 @@
                             </button>
                         </div>
                     </div>
-                    <div
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4">
-                        NOT APPLIED
+                    <div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 status-badge">
+                        <span class="status-text">NOT APPLIED</span>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps
-                        practices
-                        and
-                        cloud infrastructure.
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 notes">
+                        Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.
                     </p>
                     <div class="flex gap-3">
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors btnInterveiw">INTERVIEW</button>
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors">REJECTED</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
                     </div>
                 </div>
-
             </section>
 
-
-            <section id="fifth-job">
+            <!-- Job 5 -->
+            <section id="fifth-job" class="job-card">
                 <div
                     class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900 dark:text-white">Innovation Labs</h2>
-                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2">UI/UX Engineer</p>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white company">Innovation Labs</h2>
+                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">UI/UX Engineer</p>
                             <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">place</span>
-                                    Austin, TX</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">work_outline</span> Full-time</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">payments</span> $110,000 -
-                                    $150,000</span>
+                                <span class="flex items-center gap-1 job-pattern">Austin, TX</span>
+                                <span class="flex items-center gap-1 job-time">Full-time</span>
+                                <span class="flex items-center gap-1 salary-range">$110,000 - $150,000</span>
                             </div>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
                                 <span class="flex items-center gap-1">
                                     <span class="material-icons-outlined text-sm">delete</span>
                                     DELETE
@@ -332,45 +256,35 @@
                             </button>
                         </div>
                     </div>
-                    <div
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4">
-                        NOT APPLIED
+                    <div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 status-badge">
+                        <span class="status-text">NOT APPLIED</span>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Create beautiful and functional user interfaces for our suite of products. Strong design skills
-                        and
-                        frontend development expertise required.
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 notes">
+                        Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.
                     </p>
                     <div class="flex gap-3">
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors btnInterveiw">INTERVIEW</button>
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors">REJECTED</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
                     </div>
                 </div>
             </section>
 
-            <section id="sixth job">
+            <!-- Job 6 -->
+            <section id="sixth-job" class="job-card">
                 <div
                     class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900 dark:text-white">MegaCorp Solutions</h2>
-                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2">JavaScript Developer</p>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white company">MegaCorp Solutions</h2>
+                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">JavaScript Developer</p>
                             <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">place</span>
-                                    New York, NY</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">work_outline</span> Full-time</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">payments</span> $130,000 -
-                                    $170,000</span>
+                                <span class="flex items-center gap-1 job-pattern">New York, NY</span>
+                                <span class="flex items-center gap-1 job-time">Full-time</span>
+                                <span class="flex items-center gap-1 salary-range">$130,000 - $170,000</span>
                             </div>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
                                 <span class="flex items-center gap-1">
                                     <span class="material-icons-outlined text-sm">delete</span>
                                     DELETE
@@ -378,46 +292,35 @@
                             </button>
                         </div>
                     </div>
-                    <div
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4">
-                        NOT APPLIED
+                    <div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 status-badge">
+                        <span class="status-text">NOT APPLIED</span>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Build enterprise applications with JavaScript and modern frameworks. We offer competitive
-                        compensation,
-                        health insurance, and professional development opportunities.
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 notes">
+                        Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.
                     </p>
                     <div class="flex gap-3">
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors btnInterveiw">INTERVIEW</button>
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors">REJECTED</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
                     </div>
                 </div>
-
             </section>
 
-            <section id="seventh job">
-
+            <!-- Job 7 -->
+            <section id="seventh-job" class="job-card">
                 <div
                     class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900 dark:text-white">StartupXYZ</h2>
-                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2">Full Stack Engineer</p>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white company">StartupXYZ</h2>
+                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">Full Stack Engineer</p>
                             <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">public</span> Remote</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">work_outline</span> Full-time</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">payments</span> $120,000 -
-                                    $160,000</span>
+                                <span class="flex items-center gap-1 job-pattern">Remote</span>
+                                <span class="flex items-center gap-1 job-time">Full-time</span>
+                                <span class="flex items-center gap-1 salary-range">$120,000 - $160,000</span>
                             </div>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
                                 <span class="flex items-center gap-1">
                                     <span class="material-icons-outlined text-sm">delete</span>
                                     DELETE
@@ -425,46 +328,35 @@
                             </button>
                         </div>
                     </div>
-                    <div
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4">
-                        NOT APPLIED
+                    <div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 status-badge">
+                        <span class="status-text">NOT APPLIED</span>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        Join our fast-growing startup and work on our core platform. Experience with Node.js and React
-                        required.
-                        Great benefits and equity package included.
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 notes">
+                        Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.
                     </p>
                     <div class="flex gap-3">
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors btnInterveiw">INTERVIEW</button>
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors">REJECTED</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
                     </div>
                 </div>
-
             </section>
 
-            <section id="eight-job">
+            <!-- Job 8 -->
+            <section id="eight-job" class="job-card">
                 <div
                     class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 p-6 rounded-xl shadow-sm relative transition-shadow hover:shadow-md">
                     <div class="flex justify-between items-start">
                         <div>
-                            <h2 class="text-xl font-bold text-slate-900 dark:text-white">TechCorp Industries</h2>
-                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2">Senior Frontend Developer</p>
+                            <h2 class="text-xl font-bold text-slate-900 dark:text-white company">TechCorp Industries</h2>
+                            <p class="text-slate-600 dark:text-slate-400 font-medium mb-2 skills">Senior Frontend Developer</p>
                             <div class="flex flex-wrap gap-x-4 gap-y-1 text-sm text-slate-500 dark:text-slate-500 mb-4">
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">place</span>
-                                    San Francisco, CA</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">work_outline</span> Full-time</span>
-                                <span class="flex items-center gap-1"><span
-                                        class="material-icons-outlined text-sm">payments</span> $130,000 -
-                                    $175,000</span>
+                                <span class="flex items-center gap-1 job-pattern">San Francisco, CA</span>
+                                <span class="flex items-center gap-1 job-time">Full-time</span>
+                                <span class="flex items-center gap-1 salary-range">$130,000 - $175,000</span>
                             </div>
                         </div>
                         <div class="flex gap-3 items-center">
-                            <button
-                                class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
+                            <button class="px-4 py-2 text-sm font-bold border-2 border-gray-500 text-gray-600 dark:text-gray-400 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-950/30 transition-colors delete-btn">
                                 <span class="flex items-center gap-1">
                                     <span class="material-icons-outlined text-sm">delete</span>
                                     DELETE
@@ -472,38 +364,24 @@
                             </button>
                         </div>
                     </div>
-                    <div
-                        class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4">
-                        NOT APPLIED
+                    <div class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 mb-4 status-badge">
+                        <span class="status-text">NOT APPLIED</span>
                     </div>
-                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6">
-                        We are looking for an experienced Frontend Developer to build scalable web applications using
-                        React
-                        and
-                        TypeScript. You will work with a talented team on cutting-edge projects.
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-6 notes">
+                        We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
                     </p>
                     <div class="flex gap-3">
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors btnInterveiw">INTERVIEW</button>
-                        <button
-                            class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors">REJECTED</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-green-500 text-green-600 dark:text-green-400 rounded-lg hover:bg-green-50 dark:hover:bg-green-950/30 transition-colors interview-btn">INTERVIEW</button>
+                        <button class="px-4 py-2 text-sm font-bold border-2 border-red-500 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 transition-colors reject-btn">REJECTED</button>
                     </div>
                 </div>
-                </div>
-
-
             </section>
-
         </section>
-
     </main>
 
     <br>
 
-
-
     <script src="./scripts/machine.js"></script>
-    <script src="./scripts/interveiw.js"></script>
 </body>
 
 </html>
